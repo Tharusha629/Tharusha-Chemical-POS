@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Product {
+  id            Int      @id @default(autoincrement())
+  name          String
+  sinhala       String
+  aliases       String
+  category      String
+  brand         String
+  batch         String
+  expiry        DateTime
+  buyingPrice   Float
+  labeledPrice  Float
+  discount      Float
+  type          String
+
+  bag50         Float?
+  bag25         Float?
+  bag10         Float?
+  loosePrice    Float?
+
+  createdAt     DateTime @default(now())
+}
